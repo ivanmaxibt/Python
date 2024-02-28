@@ -1,4 +1,4 @@
-# B) Implementación del método mostrarSalarios: Aquí tienes una implementación básica en Python para el método mostrarSalarios:
+# B) Implementación del método mostrarSalarios:
 
 class Empleado:
     def __init__(self, dni, nombre, apellido, anio_ingreso):
@@ -9,6 +9,12 @@ class Empleado:
 
     def calcular_salario(self):
         pass  # Implementar en las subclases
+
+    def empleadoConMasClientes(empleados):
+    return max(empleados, key=lambda emp: emp.clientes_captados)
+
+    empleado_mas_clientes = empleadoConMasClientes(empleados)
+    print(f"Empleado con más clientes captados: {empleado_mas_clientes.nombre} ({empleado_mas_clientes.clientes_captados} clientes)")
 
 class EmpleadoComision(Empleado):
     def __init__(self, dni, nombre, apellido, anio_ingreso, salario_minimo, clientes_captados, monto_por_cliente):
@@ -52,11 +58,3 @@ empleados = [
 # Mostrar salarios
 for empleado in empleados:
     print(f"{empleado.nombre} {empleado.apellido}: ${empleado.calcular_salario():.2f}")
-
-# C) Implementación del método empleadoConMasClientes: Para encontrar al empleado con más clientes captados, puedes usar la función max con una clave personalizada:
-def empleadoConMasClientes(empleados):
-    return max(empleados, key=lambda emp: emp.clientes_captados)
-
-# Ejemplo de uso:
-empleado_mas_clientes = empleadoConMasClientes(empleados)
-print(f"Empleado con más clientes captados: {empleado_mas_clientes.nombre} ({empleado_mas_clientes.clientes_captados} clientes)")
